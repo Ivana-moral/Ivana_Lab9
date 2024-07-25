@@ -13,8 +13,7 @@ def encode(password):
     for i in range (len(password)):
         val = int(password[i])
         val = val + 3
-        val = val % 10
-        encoded_value += val
+        encoded_value += str(val)[-1:]
 
     return encoded_value
 
@@ -33,9 +32,9 @@ def decode(password):
     pass
 
 def main():
+    encoded_password = ''
 
     while True:
-        encoded_password = ''
         display_menu()
         options = int(input("Please enter an option:"))
 
