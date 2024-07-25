@@ -22,11 +22,18 @@ def encode(password):
 
 
 # add def decode(password) below
+def decode(password):
+    decoded_value = ''
+    for i in range(len(password)):
+        val = int(password[i])
+        val = val + 7
+        decoded_value += str(val)[-1:]
+    return decoded_value
 
-
-
+    pass
 
 def main():
+
     while True:
         encoded_password = ''
         display_menu()
@@ -38,7 +45,7 @@ def main():
             print("Your password has been encoded and stored!")
 
         elif options == 2:
-            decoded_password = ''  #add the decode funtion value in here!!!
+            decoded_password = decode(encoded_password)
             print(f"The encoded password is {encoded_password}, and the original password is {decoded_password}.")
 
         elif options == 3:
